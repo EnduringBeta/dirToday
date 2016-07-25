@@ -1,5 +1,8 @@
-# This script creates a folder with today's date on it and
-# moves all image files in the current folder into it.
+# This script creates a folder with today's date on it
+# and moves all files in the current folder into it.
+# It does not move folders.
+# If there are duplicate folders, it makes a second
+# with the hour and minute attached to the name.
 # By Ross Llewallyn
 
 import datetime
@@ -23,5 +26,5 @@ os.mkdir(todayStr)
 
 files = os.listdir()
 for filename in files:
-    if (os.path.isfile(filename) and filename != "dirToday.py"):
+    if (os.path.isfile(filename) and filename != "dirToday.py" and filename != "Do.bat"):
         shutil.move(filename, ".\\" + todayStr)
